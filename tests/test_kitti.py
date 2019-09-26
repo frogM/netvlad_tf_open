@@ -1,5 +1,9 @@
 # This takes a lot of time to run, so not written as unit test.
 
+#%%
+import sys
+sys.path.append('/home/frog/Desktop/netvlad_tf_open/python/')
+
 import netvlad_tf.nets as nets
 
 import cv2
