@@ -1,8 +1,8 @@
 # This takes a lot of time to run, so not written as unit test.
 
-#%%
 import sys
-sys.path.append('/home/frog/Desktop/netvlad_tf_open/python/')
+sys.path.append('/home/wangrong/netvlad_tf_open-master/python')
+sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 
 import netvlad_tf.nets as nets
 

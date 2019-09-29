@@ -1,5 +1,6 @@
 import sys
-sys.path.append('/home/frog/Desktop/netvlad_tf_open/python/')
+sys.path.append('/home/wangrong/netvlad_tf_open-master/python')
+sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 
 import netvlad_tf.nets as nets
 
@@ -29,6 +30,7 @@ class TestNets(unittest.TestCase):
         saver.restore(sess, nets.defaultCheckpoint())
 
         inim = cv2.imread(nfm.exampleImgPath())
+        #print(nfm.exampleImgPath()) #/home/wangrong/netvlad_tf_open-master/example.jpg
         inim = cv2.cvtColor(inim, cv2.COLOR_BGR2RGB)
 
         batch = np.expand_dims(inim, axis=0)
@@ -38,11 +40,15 @@ class TestNets(unittest.TestCase):
             sess.run(net_out, feed_dict={image_batch: batch})
         t = time.time()
         result = sess.run(net_out, feed_dict={image_batch: batch})
+        #print(result.size) #4096
+        #print(result) #[[-0.00681984 -0.00276458 -0.00730957 ...  0.01022749 -0.00939475
+                       #-0.0027039 ]]
         print('Took %f seconds' % (time.time() - t))
 
         #%% Load Matlab results
         mat = scio.loadmat(nfm.exampleStatPath(),
                            struct_as_record=False, squeeze_me=True)
+        #print(nfm.exampleStatPath()) #/home/wangrong/netvlad_tf_open-master/matlab/example_stats.mat
         mat_outs = mat['outs']
 
         #%% Compare final output
