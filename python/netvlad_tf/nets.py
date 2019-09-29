@@ -7,7 +7,7 @@ import netvlad_tf.layers as layers
 
 def defaultCheckpoint():
     return os.path.join(dirname(dirname(dirname(__file__))), 
-                              'checkpoints', 
+                              'data/checkpoints', 
                               'vd16_pitts30k_conv5_3_vlad_preL2_intra_white')
 
 def vgg16NetvladPca(image_batch):

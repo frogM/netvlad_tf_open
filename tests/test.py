@@ -27,7 +27,7 @@ class TestNets(unittest.TestCase):
         sess = tf.Session()
         saver.restore(sess, nets.defaultCheckpoint())
 
-        rimg = cv2.imread('/home/wangrong/netvlad_tf_open-master/images/office_1.png')
+        rimg = cv2.imread('data/images/office_1.png')
         rimg = cv2.cvtColor(rimg, cv2.COLOR_BGR2RGB)
 
         rbatch = np.expand_dims(rimg, axis=0)
@@ -40,7 +40,7 @@ class TestNets(unittest.TestCase):
         print('Took %f seconds' % (time.time() - rt))
 
 
-        qimg = cv2.imread('/home/wangrong/netvlad_tf_open-master/images/office_3.png')
+        qimg = cv2.imread('data/images/office_3.png')
         qimg = cv2.cvtColor(qimg, cv2.COLOR_BGR2RGB)
 
         qbatch = np.expand_dims(qimg, axis=0)

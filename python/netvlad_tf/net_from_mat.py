@@ -9,14 +9,14 @@ import netvlad_tf.layers as layers
 #%% Spyder section for debugging.
 
 def structedMatPath():
-    return os.path.join(dirname(dirname(dirname(__file__))), 'matlab',
+    return os.path.join(dirname(dirname(dirname(__file__))), 'data/matlab',
                         'structed.mat')
 
 def exampleImgPath():
     return os.path.join(dirname(dirname(dirname(__file__))), 'example.jpg')
 
 def exampleStatPath():
-    return os.path.join(dirname(dirname(dirname(__file__))), 'matlab',
+    return os.path.join(dirname(dirname(dirname(__file__))), 'data/matlab',
                         'example_stats.mat')
 
 def netFromMat():
