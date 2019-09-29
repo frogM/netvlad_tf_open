@@ -1,6 +1,6 @@
 import sys, os
-sys.path.append('/home/wangrong/netvlad_tf_open-master/python')
-sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
+sys.path.append('/home/frog/Desktop/netvlad_tf_open/python')
+# sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 
 import netvlad_tf.nets as nets
 
